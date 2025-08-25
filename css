@@ -1,0 +1,135 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(120deg, #1e3c72, #2a5298);
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Navigation Bar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+}
+
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ffcc00;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: url('https://picsum.photos/1200/600?blur') no-repeat center/cover;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.hero span {
+  color: #ffcc00;
+}
+
+.hero p {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  background: #ffcc00;
+  color: #000;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* Sections */
+.section {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  width: 200px;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* About */
+.about p {
+  max-width: 600px;
+  margin: 1rem auto;
+  font-size: 1.1rem;
+}
+
+/* Contact */
+.contact a {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  margin-top: 2rem;
+}
