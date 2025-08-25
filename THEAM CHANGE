@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YO-YO STUDIO</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>YO-YO STUDIO</h1>
+    <p>Professional Video Editing & Creative Services 🎬</p>
+  </header>
+
+  <section class="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li>🎞 Video Editing</li>
+      <li>📱 Reels & Shorts</li>
+      <li>💍 Wedding Highlights</li>
+      <li>✨ VFX & Motion Graphics</li>
+    </ul>
+  </section>
+
+  <section class="about">
+    <h2>About Us</h2>
+    <p>
+      YO-YO STUDIO is your one-stop destination for all video editing needs.
+      We deliver high-quality edits, cinematic highlights, and engaging content
+      for every platform.
+    </p>
+  </section>
+
+  <section class="contact">
+    <h2>Contact</h2>
+    <p>📧 Email: <a href="mailto:sk7620153@gmail.com">sk7620153@gmail.com</a></p>
+    <p>📷 Instagram: <a href="https://instagram.com/" target="_blank">Follow Us</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 YO-YO STUDIO | All Rights Reserved</p>
+  </footer>
+</body>
+</html>
