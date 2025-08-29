@@ -1,60 +1,131 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>YO-YO STUDIO</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
       margin: 0;
-      font-family: system-ui, sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      padding: 0;
+      background: linear-gradient(to right, #141e30, #243b55);
       color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
       text-align: center;
     }
-    .card {
-      background: rgba(0,0,0,0.6);
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-      max-width: 400px;
-      width: 90%;
+    header {
+      padding: 40px 20px;
     }
-    h1 {
-      margin-bottom: 10px;
-      font-size: 1.8rem;
+    header h1 {
+      font-size: 40px;
+      margin: 0;
+      color: #ff0066;
     }
-    p {
-      margin-bottom: 20px;
-      font-size: 1rem;
-      color: #ccc;
+    section {
+      padding: 40px 20px;
     }
-    a {
+    .services {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .service {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 10px;
+      width: 220px;
+    }
+    .btn {
       display: inline-block;
-      padding: 12px 20px;
-      border-radius: 8px;
-      background: #E1306C;
-      color: #fff;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: #ff0066;
+      color: white;
       text-decoration: none;
+      border-radius: 6px;
       font-weight: bold;
       transition: 0.3s;
     }
-    a:hover {
-      background: #c2185b;
+    .btn:hover {
+      background: #ff3385;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      background: #0d1523;
+      padding: 20px;
+      margin-top: 30px;
     }
   </style>
 </head>
 <body>
-  <div class="card">
+
+  <header>
     <h1>YO-YO STUDIO</h1>
-    <p>Follow us on Instagram for latest updates 🚀</p>
-    <a href="https://www.instagram.com/timelesstokens.io?utm_source=ig_web_button_share_sheet&igsh=MTR5NGMxZnBhdWh3aQ==" target="_blank">
-      👉 Visit Instagram
-    </a>
-  </div>
+    <p>Capturing Moments, Creating Memories</p>
+  </header>
+
+  <section>
+    <h2>About Us</h2>
+    <p>
+      At <b>YO-YO STUDIO</b>, we specialize in creating timeless memories through our 
+      professional editing styles. Whether you prefer 
+      <b>Traditional Editing</b> for a classic look or 
+      <b>Cinematic Editing</b> for a modern cinematic experience – 
+      we deliver perfection in every frame.
+    </p>
+  </section>
+
+  <section>
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="service">🎥 Video Mixing</div>
+      <div class="service">📸 Album Design</div>
+      <div class="service">🎞️ Wedding Teaser</div>
+      <div class="service">📱 Insta Reels</div>
+      <div class="service">🎬 Short Videos</div>
+      <div class="service">🎨 Traditional Editing</div>
+      <div class="service">🎥 Cinematic Editing</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Our Gallery</h2>
+    <div class="gallery">
+      <img src="assets/images/photo1.jpg" alt="Wedding Sample 1">
+      <img src="assets/images/photo2.jpg" alt="Wedding Sample 2">
+      <img src="assets/images/photo3.jpg" alt="Wedding Sample 3">
+      <img src="assets/images/photo4.jpg" alt="Wedding Sample 4">
+      <img src="assets/images/photo5.jpg" alt="Wedding Sample 5">
+      <img src="assets/images/photo6.jpg" alt="Wedding Sample 6">
+    </div>
+    <p>✨ A glimpse of our latest works. More coming soon!</p>
+  </section>
+
+  <section>
+    <h2>Contact Us</h2>
+    <p>📍 Warisaliganj, Murlachak (Nawada), Bihar</p>
+    <p>📞 7250986286</p>
+    <p>📧 yoyostudio63@gmail.com</p>
+    <a href="https://www.instagram.com/timelesstokens.io" target="_blank" class="btn">Visit Instagram</a>
+  </section>
+
+  <footer>
+    <p>© 2025 YO-YO STUDIO. All Rights Reserved.</p>
+  </footer>
+
 </body>
 </html>
