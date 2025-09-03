@@ -9,41 +9,46 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #0d0d0d;
-      color: #fff;
-      line-height: 1.6;
+      background-color: #0d0d0d;
+      color: #f5f5f5;
     }
 
     header {
-      background: #1a1a1a;
-      padding: 20px;
+      background: #111;
       text-align: center;
-      color: #ff3385;
+      padding: 40px 20px;
     }
 
     header h1 {
-      margin: 0;
-      font-size: 2.5rem;
+      font-size: 36px;
+      color: #ff3385;
     }
 
     header p {
-      margin: 5px 0 0;
-      font-size: 1.2rem;
-      color: #ddd;
+      font-size: 18px;
+      color: #ccc;
     }
 
     section {
       padding: 40px 20px;
-      text-align: center;
+      max-width: 1000px;
+      margin: auto;
     }
 
-    section h2 {
+    h2 {
       font-size: 28px;
       margin-bottom: 15px;
       color: #ff3385;
+      text-align: center;
     }
 
-    /* Gallery Section */
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    /* Gallery */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -63,18 +68,12 @@
 
     /* Contact Section */
     .contact-section {
-      background: #111; 
+      background: #111;
       padding: 40px 20px;
       margin-top: 40px;
       border-radius: 12px;
       color: #fff;
       text-align: center;
-    }
-
-    .contact-section h2 {
-      font-size: 28px;
-      margin-bottom: 15px;
-      color: #ff3385;
     }
 
     .contact-info p {
@@ -85,6 +84,7 @@
     .contact-info a {
       color: #ff3385;
       text-decoration: none;
+      font-weight: bold;
     }
 
     .contact-info a:hover {
@@ -100,9 +100,10 @@
       font-weight: bold;
       color: #fff;
       background: #ff3385;
-      padding: 8px 14px;
+      padding: 10px 16px;
       border-radius: 8px;
       transition: 0.3s;
+      display: inline-block;
     }
 
     .social-links a:hover {
@@ -112,30 +113,33 @@
     footer {
       background: #0d1523;
       padding: 20px;
-      margin-top: 30px;
       text-align: center;
-      font-size: 14px;
+      margin-top: 30px;
       color: #aaa;
     }
   </style>
 </head>
 <body>
 
+  <!-- Header -->
   <header>
     <h1>YO-YO STUDIO</h1>
     <p>Capturing Moments, Creating Memories</p>
   </header>
 
+  <!-- About Section -->
   <section>
     <h2>About Us</h2>
     <p>
       At <b>YO-YO STUDIO</b>, we specialize in creating timeless memories through our professional editing styles.  
-      Whether you prefer <b>Traditional Editing</b> for a classic look or <b>Cinematic Editing</b> for a modern experience – we deliver perfection in every frame.
+      Whether you prefer <b>Traditional Editing</b> for a classic look or <b>Cinematic Editing</b> for a modern cinematic experience –  
+      we deliver perfection in every frame.
     </p>
   </section>
 
+  <!-- Gallery -->
   <section>
-    <h2>Gallery</h2>
+    <h2>Our Work</h2>
     <div class="gallery">
       <img src="yo_yo_studio_watermarked.jpg" alt="Sample Work 1">
       <img src="yo_yo_studio_watermarked.jpg" alt="Sample Work 2">
@@ -143,7 +147,7 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- Contact Section -->
   <section id="contact" class="contact-section">
     <h2>Contact Us</h2>
     <p>Get in touch with <strong>Yo Yo Studio</strong> for bookings and inquiries.</p>
@@ -161,8 +165,9 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
-    &copy; 2025 YO-YO STUDIO | All Rights Reserved
+    <p>© 2025 YO-YO STUDIO. All Rights Reserved.</p>
   </footer>
 
 </body>
