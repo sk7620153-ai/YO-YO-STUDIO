@@ -6,49 +6,53 @@
   <title>YO-YO STUDIO</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #141e30, #243b55);
-      color: white;
+      font-family: Arial, sans-serif;
+      background: #0d0d0d;
+      color: #fff;
       text-align: center;
     }
     header {
-      padding: 40px 20px;
+      background: #111;
+      padding: 20px;
     }
     header h1 {
-      font-size: 40px;
       margin: 0;
-      color: #ff0066;
+      font-size: 2.5em;
+      color: #ff3385;
+    }
+    header p {
+      margin: 5px 0 0;
+      font-size: 1.2em;
+      color: #ccc;
     }
     section {
       padding: 40px 20px;
     }
-    .services {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
+    h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #ff3385;
     }
-    .service {
-      background: rgba(255,255,255,0.1);
-      padding: 20px;
-      border-radius: 10px;
-      width: 220px;
+    p {
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+      color: #ddd;
     }
     .btn {
       display: inline-block;
       margin-top: 20px;
       padding: 12px 25px;
-      background: #ff0066;
-      color: white;
+      font-size: 1em;
+      background: #ff3385;
+      color: #fff;
       text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
+      border-radius: 25px;
       transition: 0.3s;
     }
     .btn:hover {
-      background: #ff3385;
+      background: #ff0055;
     }
     .gallery {
       display: grid;
@@ -60,6 +64,7 @@
       width: 100%;
       border-radius: 10px;
       transition: transform 0.3s;
+      cursor: pointer;
     }
     .gallery img:hover {
       transform: scale(1.05);
@@ -68,6 +73,33 @@
       background: #0d1523;
       padding: 20px;
       margin-top: 30px;
+    }
+
+    /* Lightbox modal styling */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -78,54 +110,45 @@
     <p>Capturing Moments, Creating Memories</p>
   </header>
 
-  <section>
+  <section id="about">
     <h2>About Us</h2>
     <p>
-      At <b>YO-YO STUDIO</b>, we specialize in creating timeless memories through our 
-      professional editing styles. Whether you prefer 
-      <b>Traditional Editing</b> for a classic look or 
-      <b>Cinematic Editing</b> for a modern cinematic experience – 
+      At <b>YO-YO STUDIO</b>, we specialize in creating timeless memories through our
+      professional editing styles. Whether you prefer <br>
+      <b>Traditional Editing</b> for a classic look or <br>
+      <b>Cinematic Editing</b> for a modern cinematic experience – <br>
       we deliver perfection in every frame.
     </p>
   </section>
 
-  <section>
-    <h2>Our Services</h2>
-    <div class="services">
-      <div class="service">🎥 Video Mixing</div>
-      <div class="service">📸 Album Design</div>
-      <div class="service">🎞️ Wedding Teaser</div>
-      <div class="service">📱 Insta Reels</div>
-      <div class="service">🎬 Short Videos</div>
-      <div class="service">🎨 Traditional Editing</div>
-      <div class="service">🎥 Cinematic Editing</div>
-    </div>
-  </section>
-
-  <section>
+  <!-- ✅ New Gallery Section -->
+  <section id="gallery" class="gallery-section">
     <h2>Our Gallery</h2>
-    <div class="gallery">
-      <img src="assets/images/photo1.jpg" alt="Wedding Sample 1">
-      <img src="assets/images/photo2.jpg" alt="Wedding Sample 2">
-      <img src="assets/images/photo3.jpg" alt="Wedding Sample 3">
-      <img src="assets/images/photo4.jpg" alt="Wedding Sample 4">
-      <img src="assets/images/photo5.jpg" alt="Wedding Sample 5">
-      <img src="assets/images/photo6.jpg" alt="Wedding Sample 6">
-    </div>
-    <p>✨ A glimpse of our latest works. More coming soon!</p>
-  </section>
+    <p class="gallery-subtitle">Tap any image to enlarge and feel the cinematic vibes 🎬✨</p>
 
-  <section>
-    <h2>Contact Us</h2>
-    <p>📍 Warisaliganj, Murlachak (Nawada), Bihar</p>
-    <p>📞 7250986286</p>
-    <p>📧 yoyostudio63@gmail.com</p>
-    <a href="https://www.instagram.com/timelesstokens.io" target="_blank" class="btn">Visit Instagram</a>
+    <div class="gallery">
+      <img src="images/yo_yo_studio_watermarked.jpg" alt="Yo Yo Studio Cinematic Vibes" class="thumb" onclick="openModal(this.src)">
+      <img src="images/sample1.jpg" alt="Wedding Shoot" class="thumb" onclick="openModal(this.src)">
+      <img src="images/sample2.jpg" alt="Pre Wedding" class="thumb" onclick="openModal(this.src)">
+    </div>
   </section>
 
   <footer>
-    <p>© 2025 YO-YO STUDIO. All Rights Reserved.</p>
+    <p>&copy; 2025 YO-YO STUDIO. All Rights Reserved.</p>
   </footer>
+
+  <!-- ✅ Lightbox Modal -->
+  <div id="lightboxModal" class="modal" onclick="this.style.display='none'">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg">
+  </div>
+
+  <script>
+    function openModal(src) {
+      document.getElementById('modalImg').src = src;
+      document.getElementById('lightboxModal').style.display = 'flex';
+    }
+  </script>
 
 </body>
 </html>
