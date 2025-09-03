@@ -3,7 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>YO YO STUDIO</title>
+  <title>YO YO STUDIO - Cinematic Photography & Editing</title>
+
+  <!-- ✅ SEO Meta Tags -->
+  <meta name="description" content="YO YO Studio - Cinematic Photography & Professional Editing. Turning moments into timeless memories with photography, films, and editing.">
+  <meta name="keywords" content="YO YO Studio, Photography, Cinematic Films, Photo Editing, Professional Studio, Wedding Photography">
+  <meta name="author" content="YO YO Studio">
+
+  <!-- ✅ Open Graph (For Social Media Preview) -->
+  <meta property="og:title" content="YO YO STUDIO">
+  <meta property="og:description" content="Cinematic Photography & Professional Editing">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:type" content="website">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
@@ -28,31 +39,7 @@
       text-align: center;
     }
 
-    /* Hero Section */
-    #hero {
-      background: url('https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-      position: relative;
-    }
-    #hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.7);
-    }
-    #hero .content {
-      position: relative;
-      z-index: 1;
-    }
-    #hero h1 {
-      font-size: 60px;
-      font-weight: 700;
-      letter-spacing: 3px;
-    }
-    #hero p {
-      margin-top: 15px;
-      font-size: 20px;
-      color: #ddd;
-    }
+    /* Navigation */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -71,7 +58,37 @@
     }
     nav a:hover { color: gold; }
 
-    /* Section Styles */
+    /* Hero Section */
+    #hero {
+      background: url('https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      position: relative;
+    }
+    #hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.7);
+    }
+    #hero .content {
+      position: relative;
+      z-index: 1;
+    }
+    #hero img {
+      width: 80px;
+      margin-bottom: 15px;
+    }
+    #hero h1 {
+      font-size: 60px;
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+    #hero p {
+      margin-top: 15px;
+      font-size: 20px;
+      color: #ddd;
+    }
+
+    /* Section Titles */
     h2 {
       font-size: 36px;
       margin-bottom: 20px;
@@ -112,14 +129,34 @@
     .gallery img {
       width: 100%;
       border-radius: 10px;
+      cursor: pointer;
       transition: 0.3s;
     }
     .gallery img:hover {
       transform: scale(1.05);
     }
 
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+    .lightbox:target {
+      display: flex;
+    }
+
     /* Contact */
-    .contact p { margin: 10px 0; }
+    .contact p { margin: 10px 0; font-size: 18px; }
     .contact a { color: gold; text-decoration: none; font-weight: 600; }
     .contact a:hover { text-decoration: underline; }
 
@@ -146,6 +183,8 @@
   <!-- Hero -->
   <section id="hero">
     <div class="content">
+      <!-- ✅ Replace with your logo -->
+      <img src="https://cdn-icons-png.flaticon.com/512/685/685655.png" alt="Studio Logo">
       <h1>YO YO STUDIO</h1>
       <p>Cinematic Photography & Professional Editing</p>
     </div>
@@ -184,12 +223,18 @@
   <section id="gallery">
     <h2>Our Gallery</h2>
     <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1516728778615-2d590ea1856f?auto=format&fit=crop&w=800&q=80" alt="Gallery1">
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Gallery2">
-      <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=800&q=80" alt="Gallery3">
-      <img src="https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?auto=format&fit=crop&w=800&q=80" alt="Gallery4">
+      <a href="#img1"><img src="https://images.unsplash.com/photo-1516728778615-2d590ea1856f?auto=format&fit=crop&w=800&q=80" alt="Gallery1"></a>
+      <a href="#img2"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Gallery2"></a>
+      <a href="#img3"><img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=800&q=80" alt="Gallery3"></a>
+      <a href="#img4"><img src="https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?auto=format&fit=crop&w=800&q=80" alt="Gallery4"></a>
     </div>
   </section>
+
+  <!-- Lightbox Images -->
+  <div id="img1" class="lightbox"><a href="#gallery"><img src="https://images.unsplash.com/photo-1516728778615-2d590ea1856f?auto=format&fit=crop&w=1200&q=80"></a></div>
+  <div id="img2" class="lightbox"><a href="#gallery"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"></a></div>
+  <div id="img3" class="lightbox"><a href="#gallery"><img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=1200&q=80"></a></div>
+  <div id="img4" class="lightbox"><a href="#gallery"><img src="https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?auto=format&fit=crop&w=1200&q=80"></a></div>
 
   <!-- Contact -->
   <section id="contact" class="contact">
