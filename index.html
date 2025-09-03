@@ -4,218 +4,128 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>YO-YO STUDIO</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      background: #0d0d0d;
-      color: #f5f5f5;
-      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
+      background: #0a0a0a;
+      color: #eee;
+      overflow-x: hidden;
     }
 
-    /* Hero Section */
+    /* Hero */
     .hero {
       height: 100vh;
-      background: url('yo_yo_studio_watermarked.jpg') no-repeat center center/cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('yo_yo_studio_watermarked.jpg') center/cover no-repeat;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; position: relative;
     }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-    }
-
     .hero h1 {
-      font-size: 3rem;
-      color: #ff3385;
-      margin-bottom: 15px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3.5rem; color: #ff0066;
+      text-shadow: 0 0 20px #ff0066, 0 0 40px #ff3399;
     }
-
     .hero p {
-      font-size: 1.2rem;
-      color: #ddd;
-      margin-bottom: 20px;
+      margin-top: 15px; font-size: 1.2rem; color: #ccc;
     }
-
-    .hero a {
-      padding: 12px 24px;
-      background: #ff3385;
-      color: white;
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 28px;
+      background: linear-gradient(45deg, #ff0066, #ff3399);
+      color: #fff; font-weight: bold;
+      border-radius: 30px;
       text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
       transition: 0.3s;
     }
+    .btn:hover { transform: scale(1.05); }
 
-    .hero a:hover {
-      background: #d12c6d;
-    }
+    section { padding: 60px 20px; max-width: 1100px; margin: auto; text-align: center; }
 
-    /* Section */
-    section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
-      text-align: center;
-    }
-
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 15px;
-      color: #ff3385;
-    }
-
-    section p {
-      font-size: 1rem;
+    h2 {
+      font-size: 2.2rem;
       margin-bottom: 20px;
-      color: #ccc;
+      color: #ff0066;
+      text-shadow: 0 0 15px #ff1a75;
     }
+    p { color: #bbb; margin-bottom: 15px; }
 
     /* Services */
     .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 20px;
     }
-
-    .service-card {
-      background: #111;
-      padding: 20px;
-      border-radius: 12px;
-      transition: 0.3s;
+    .card {
+      background: #111; padding: 25px; border-radius: 12px;
+      transition: 0.3s; box-shadow: 0 0 10px rgba(255,0,102,0.2);
     }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-      background: #1a1a1a;
-    }
+    .card:hover { transform: translateY(-8px); box-shadow: 0 0 25px rgba(255,0,102,0.4); }
 
     /* Gallery */
     .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
+      display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 15px;
     }
-
     .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      transition: transform 0.3s, box-shadow 0.3s;
+      width: 100%; border-radius: 10px;
+      transition: 0.3s; cursor: pointer;
     }
-
     .gallery img:hover {
-      transform: scale(1.05);
-      box-shadow: 0px 4px 20px rgba(0,0,0,0.6);
+      transform: scale(1.07);
+      box-shadow: 0 0 25px rgba(255,0,102,0.5);
     }
 
-    /* Contact Section */
-    .contact-section {
-      background: #111;
-      padding: 40px 20px;
-      margin-top: 40px;
-      border-radius: 12px;
-      color: #fff;
-      text-align: center;
+    /* Contact */
+    .contact {
+      background: #111; border-radius: 12px; padding: 40px 20px;
     }
-
-    .contact-info p {
-      font-size: 18px;
-      margin: 10px 0;
-    }
-
-    .contact-info a {
-      color: #ff3385;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .contact-info a:hover {
-      text-decoration: underline;
-    }
-
-    .social-links {
-      margin-top: 20px;
-    }
+    .contact p { font-size: 1.1rem; margin: 8px 0; }
+    .contact a { color: #ff3399; text-decoration: none; font-weight: bold; }
+    .contact a:hover { text-decoration: underline; }
 
     .social-links a {
-      margin: 0 10px;
-      font-weight: bold;
-      color: #fff;
-      background: #ff3385;
-      padding: 10px 16px;
-      border-radius: 8px;
-      transition: 0.3s;
-      display: inline-block;
+      display: inline-block; margin: 10px;
+      background: linear-gradient(45deg, #ff0066, #ff3399);
+      color: #fff; padding: 10px 18px;
+      border-radius: 8px; transition: 0.3s;
     }
+    .social-links a:hover { transform: scale(1.1); }
 
-    .social-links a:hover {
-      background: #d12c6d;
-    }
-
-    footer {
-      background: #0d1523;
-      padding: 20px;
-      text-align: center;
-      margin-top: 30px;
-      color: #aaa;
-    }
+    footer { margin-top: 40px; padding: 20px; background: #0a0a0a; color: #666; text-align: center; }
   </style>
 </head>
 <body>
 
   <!-- Hero -->
   <section class="hero">
-    <div class="hero-content">
+    <div>
       <h1>YO-YO STUDIO</h1>
-      <p>Cinematic Photography & Editing | Capturing Your Timeless Moments</p>
-      <a href="#gallery">Explore Gallery</a>
+      <p>Cinematic • Photography • Editing</p>
+      <a href="#gallery" class="btn">View Gallery</a>
     </div>
   </section>
 
   <!-- About -->
   <section id="about">
     <h2>About Us</h2>
-    <p>
-      At <b>YO-YO STUDIO</b>, we craft cinematic experiences through our lens.  
-      Whether you prefer <b>Traditional Editing</b> or <b>Modern Cinematic Editing</b>,  
-      our team ensures your memories shine forever.
-    </p>
+    <p>At <b>YO-YO STUDIO</b>, we transform your memories into cinematic experiences.  
+    From <b>traditional edits</b> to <b>modern cinematic films</b>, our lens captures emotions that last forever.</p>
   </section>
 
   <!-- Services -->
   <section id="services">
     <h2>Our Services</h2>
     <div class="services">
-      <div class="service-card">
+      <div class="card">
         <h3>🎬 Cinematic Editing</h3>
-        <p>Experience movie-like visuals for your weddings, pre-weddings, and events.</p>
+        <p>Movie-like edits for weddings, pre-weddings, and events.</p>
       </div>
-      <div class="service-card">
-        <h3>📸 Professional Photography</h3>
-        <p>High-quality captures with a touch of creativity and style.</p>
+      <div class="card">
+        <h3>📸 Photography</h3>
+        <p>High-quality captures with creativity & style.</p>
       </div>
-      <div class="service-card">
+      <div class="card">
         <h3>✨ Traditional Editing</h3>
-        <p>Classic and elegant edits that never go out of style.</p>
+        <p>Elegant edits that never go out of style.</p>
       </div>
     </div>
   </section>
@@ -224,33 +134,28 @@
   <section id="gallery">
     <h2>Our Gallery</h2>
     <div class="gallery">
-      <img src="yo_yo_studio_watermarked.jpg" alt="Sample Work 1">
-      <img src="yo_yo_studio_watermarked.jpg" alt="Sample Work 2">
-      <img src="yo_yo_studio_watermarked.jpg" alt="Sample Work 3">
+      <img src="yo_yo_studio_watermarked.jpg" alt="Work 1">
+      <img src="yo_yo_studio_watermarked.jpg" alt="Work 2">
+      <img src="yo_yo_studio_watermarked.jpg" alt="Work 3">
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="contact-section">
+  <section id="contact" class="contact">
     <h2>Contact Us</h2>
-    <p>Get in touch with <strong>Yo Yo Studio</strong> for bookings and inquiries.</p>
-
-    <div class="contact-info">
-      <p><strong>📞 Phone:</strong> <a href="tel:+917250986286">+91 72509 86286</a></p>
-      <p><strong>📧 Email:</strong> <a href="mailto:yoyostudio63@gmail.com">yoyostudio63@gmail.com</a></p>
-      <p><strong>📸 Instagram:</strong> <a href="https://instagram.com/timelesstokens.io" target="_blank">@timelesstokens.io</a></p>
-    </div>
+    <p>📞 Phone: <a href="tel:+917250986286">+91 72509 86286</a></p>
+    <p>📧 Email: <a href="mailto:yoyostudio63@gmail.com">yoyostudio63@gmail.com</a></p>
+    <p>📸 Instagram: <a href="https://instagram.com/timelesstokens.io" target="_blank">@timelesstokens.io</a></p>
 
     <div class="social-links">
-      <a href="https://instagram.com/timelesstokens.io" target="_blank">📸 Instagram</a>
-      <a href="mailto:yoyostudio63@gmail.com">📧 Email</a>
-      <a href="tel:+917250986286">📞 Call Now</a>
+      <a href="https://instagram.com/timelesstokens.io" target="_blank">Instagram</a>
+      <a href="mailto:yoyostudio63@gmail.com">Email</a>
+      <a href="tel:+917250986286">Call Now</a>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
-    <p>© 2025 YO-YO STUDIO. All Rights Reserved.</p>
+    <p>© 2025 YO-YO STUDIO | Designed with ❤️</p>
   </footer>
 
 </body>
