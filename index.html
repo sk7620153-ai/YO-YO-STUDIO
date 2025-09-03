@@ -1,252 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>YO YO STUDIO - Cinematic Photography & Editing</title>
-
-  <!-- ✅ SEO Meta Tags -->
-  <meta name="description" content="YO YO Studio - Cinematic Photography & Professional Editing. Turning moments into timeless memories with photography, films, and editing.">
-  <meta name="keywords" content="YO YO Studio, Photography, Cinematic Films, Photo Editing, Professional Studio, Wedding Photography">
-  <meta name="author" content="YO YO Studio">
-
-  <!-- ✅ Open Graph (For Social Media Preview) -->
-  <meta property="og:title" content="YO YO STUDIO">
-  <meta property="og:description" content="Cinematic Photography & Professional Editing">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&w=1200&q=80">
-  <meta property="og:type" content="website">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yo-Yo Studio | Cinematic Memories</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Montserrat', sans-serif;
-      color: #fff;
-      background: #000;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
 
-    section {
+    body {
+      color: #fff;
+      text-align: center;
+      background: url('background.jpg') no-repeat center center/cover;
       min-height: 100vh;
       display: flex;
-      justify-content: center;
-      align-items: center;
       flex-direction: column;
-      padding: 60px 20px;
-      text-align: center;
+      justify-content: space-between;
+      backdrop-filter: brightness(0.8);
     }
 
-    /* Navigation */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      background: rgba(0,0,0,0.7);
-      padding: 15px;
-      z-index: 1000;
+    header {
+      padding: 40px 20px;
     }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-    nav a:hover { color: gold; }
 
-    /* Hero Section */
-    #hero {
-      background: url('https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-      position: relative;
+    header h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #ffcc00;
+      text-shadow: 2px 2px 10px #000;
     }
-    #hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.7);
-    }
-    #hero .content {
-      position: relative;
-      z-index: 1;
-    }
-    #hero img {
-      width: 80px;
-      margin-bottom: 15px;
-    }
-    #hero h1 {
-      font-size: 60px;
-      font-weight: 700;
-      letter-spacing: 3px;
-    }
-    #hero p {
-      margin-top: 15px;
-      font-size: 20px;
+
+    header p {
+      font-size: 1.2rem;
       color: #ddd;
     }
 
-    /* Section Titles */
+    .about, .gallery, .contact {
+      background: rgba(0,0,0,0.6);
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 15px;
+      width: 80%;
+      box-shadow: 0px 0px 20px rgba(0,0,0,0.7);
+    }
+
     h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
-      color: gold;
+      margin-bottom: 15px;
+      font-size: 2rem;
+      color: #ffcc00;
     }
+
     p {
-      max-width: 800px;
-      margin: auto;
+      font-size: 1rem;
       line-height: 1.6;
-      color: #ddd;
     }
 
-    /* Services Grid */
-    .services {
+    .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-    .service-card {
-      background: rgba(255,255,255,0.05);
-      padding: 20px;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
-    .service-card:hover {
-      background: rgba(255,255,255,0.1);
-      transform: translateY(-5px);
-    }
-
-    /* Gallery */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 15px;
-      margin-top: 30px;
+      margin-top: 20px;
     }
-    .gallery img {
+
+    .gallery-grid img {
       width: 100%;
       border-radius: 10px;
-      cursor: pointer;
-      transition: 0.3s;
+      transition: transform 0.3s;
     }
-    .gallery img:hover {
+
+    .gallery-grid img:hover {
       transform: scale(1.05);
     }
 
-    /* Lightbox */
-    .lightbox {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.9);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 2000;
-    }
-    .lightbox img {
-      max-width: 90%;
-      max-height: 80%;
-      border-radius: 10px;
-    }
-    .lightbox:target {
-      display: flex;
+    .contact p {
+      margin: 10px 0;
+      font-size: 1.1rem;
     }
 
-    /* Contact */
-    .contact p { margin: 10px 0; font-size: 18px; }
-    .contact a { color: gold; text-decoration: none; font-weight: 600; }
-    .contact a:hover { text-decoration: underline; }
+    .contact a {
+      color: #ffcc00;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
     footer {
-      background: #111;
-      text-align: center;
-      padding: 15px;
-      font-size: 14px;
-      color: #aaa;
+      padding: 20px;
+      font-size: 0.9rem;
+      background: rgba(0,0,0,0.7);
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="#hero">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <header>
+    <h1>Yo-Yo Studio</h1>
+    <p>Capturing Moments, Creating Cinematic Memories</p>
+  </header>
 
-  <!-- Hero -->
-  <section id="hero">
-    <div class="content">
-      <!-- ✅ Replace with your logo -->
-      <img src="https://cdn-icons-png.flaticon.com/512/685/685655.png" alt="Studio Logo">
-      <h1>YO YO STUDIO</h1>
-      <p>Cinematic Photography & Professional Editing</p>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about">
+  <section class="about">
     <h2>About Us</h2>
-    <p>At YO YO Studio, we specialize in capturing timeless memories through cinematic photography and professional editing. Every frame is crafted with passion, creativity, and precision to tell your story beautifully.</p>
+    <p>At <b>Yo-Yo Studio</b>, we specialize in creating timeless memories with professional editing styles. 
+    Whether you prefer <b>Traditional Editing</b> or <b>Cinematic Editing</b>, we deliver perfection in every frame.</p>
   </section>
 
-  <!-- Services -->
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="services">
-      <div class="service-card">
-        <h3>📸 Photography</h3>
-        <p>Professional shoots for weddings, events, and portraits.</p>
-      </div>
-      <div class="service-card">
-        <h3>🎬 Cinematic Films</h3>
-        <p>High-quality cinematic videos with storytelling approach.</p>
-      </div>
-      <div class="service-card">
-        <h3>✨ Editing & Retouching</h3>
-        <p>Expert editing to enhance and perfect every shot.</p>
-      </div>
-      <div class="service-card">
-        <h3>🏢 Studio Production</h3>
-        <p>Professional studio setup for all your creative needs.</p>
-      </div>
+  <section class="gallery">
+    <h2>Our Work</h2>
+    <div class="gallery-grid">
+      <img src="gallery1.jpg" alt="Gallery Image 1">
+      <img src="gallery2.jpg" alt="Gallery Image 2">
+      <img src="gallery3.jpg" alt="Gallery Image 3">
+      <img src="gallery4.jpg" alt="Gallery Image 4">
     </div>
   </section>
 
-  <!-- Gallery -->
-  <section id="gallery">
-    <h2>Our Gallery</h2>
-    <div class="gallery">
-      <a href="#img1"><img src="https://images.unsplash.com/photo-1516728778615-2d590ea1856f?auto=format&fit=crop&w=800&q=80" alt="Gallery1"></a>
-      <a href="#img2"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Gallery2"></a>
-      <a href="#img3"><img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=800&q=80" alt="Gallery3"></a>
-      <a href="#img4"><img src="https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?auto=format&fit=crop&w=800&q=80" alt="Gallery4"></a>
-    </div>
-  </section>
-
-  <!-- Lightbox Images -->
-  <div id="img1" class="lightbox"><a href="#gallery"><img src="https://images.unsplash.com/photo-1516728778615-2d590ea1856f?auto=format&fit=crop&w=1200&q=80"></a></div>
-  <div id="img2" class="lightbox"><a href="#gallery"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"></a></div>
-  <div id="img3" class="lightbox"><a href="#gallery"><img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=1200&q=80"></a></div>
-  <div id="img4" class="lightbox"><a href="#gallery"><img src="https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?auto=format&fit=crop&w=1200&q=80"></a></div>
-
-  <!-- Contact -->
-  <section id="contact" class="contact">
+  <section class="contact">
     <h2>Contact Us</h2>
-    <p>📱 Phone: <a href="tel:7250986286">+91 7250986286</a></p>
-    <p>✉️ Email: <a href="mailto:yoyostudio63@gmail.com">yoyostudio63@gmail.com</a></p>
+    <p>📞 Phone: <a href="tel:+917250986286">+91 72509 86286</a></p>
+    <p>📧 Email: <a href="mailto:yoyostudio63@gmail.com">yoyostudio63@gmail.com</a></p>
     <p>📷 Instagram: <a href="https://instagram.com/timelesstokens.io" target="_blank">@timelesstokens.io</a></p>
   </section>
 
-  <!-- Footer -->
   <footer>
-    © 2025 YO YO Studio | All Rights Reserved
+    <p>© 2025 Yo-Yo Studio | All Rights Reserved</p>
   </footer>
 
 </body>
