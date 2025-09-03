@@ -1,279 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>YO-YO STUDIO — Cinematic Photo Studio</title>
-  <meta name="description" content="Yo Yo Studio: Capturing Moments, Creating Memories. Traditional & Cinematic Editing. Book your shoot today." />
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YO-YO STUDIO</title>
   <style>
-    :root{
-      --bg:#0b0b0d;
-      --card:#121218;
-      --muted:#a9a9b3;
-      --accent:#ff2d6b;   /* signature pink */
-      --gold:#f1c40f;     /* cinematic gold */
-      --radius:18px;
-      --shadow:0 12px 35px rgba(0,0,0,.45);
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:#fff;font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial}
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-
-    /* NAVBAR */
-    .nav{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(10px);
-      background: linear-gradient(180deg, rgba(10,10,12,.85), rgba(10,10,12,.35));
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-    .nav .wrap{
-      max-width:1100px; margin:auto; padding:14px 18px;
-      display:flex; align-items:center; justify-content:space-between;
-    }
-    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.5px}
-    .brand .dot{width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 18px var(--accent)}
-    .nav a.btn{padding:9px 16px;border-radius:999px;background:var(--accent);font-weight:600}
-    .nav a.btn:hover{filter:brightness(1.08)}
-
-    /* HERO */
-    .hero{
-      position:relative; min-height:72vh; display:grid; place-items:center; text-align:center; overflow:hidden;
-      background: radial-gradient(60% 100% at 50% 0%, rgba(241,196,15,.08), transparent 60%),
-                  linear-gradient(180deg, rgba(255,45,107,.08), rgba(0,0,0,0));
-    }
-    .hero::before{
-      content:""; position:absolute; inset:0; z-index:-1;
-      background:
-        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.8)),
-        url("images/hero.jpg") center/cover no-repeat;
-      filter:saturate(1.05);
-    }
-    .hero h1{font:800 56px/1.05 Montserrat, sans-serif; letter-spacing:.5px; margin:0 16px}
-    .hero p{color:var(--muted); max-width:720px; margin:16px auto 24px; font-size:18px}
-    .cta-row{display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
-    .btn{
-      background:var(--accent); padding:12px 22px; border-radius:999px; font-weight:700; box-shadow: var(--shadow);
-    }
-    .btn.ghost{background:transparent; border:1px solid rgba(255,255,255,.2)}
-    .badge{
-      display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px;
-      border:1px solid rgba(255,255,255,.14); background:rgba(255,255,255,.04); color:#eaeaea; font-size:13px; margin-top:20px
-    }
-    .badge i{color:var(--gold)}
-
-    /* SECTIONS */
-    .section{max-width:1100px; margin:60px auto; padding:0 18px}
-    h2.title{font:800 32px/1.1 Montserrat, sans-serif; margin:0 0 12px}
-    .subtitle{color:var(--muted); margin:0 0 24px}
-
-    /* ABOUT */
-    .about{
-      display:grid; grid-template-columns: 1.1fr 1fr; gap:28px; align-items:center;
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.02));
-      border:1px solid rgba(255,255,255,.06); border-radius: var(--radius); padding:26px; box-shadow: var(--shadow);
-    }
-    .about .card{background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); padding:22px}
-    .about ul{margin:12px 0 0; padding-left:18px}
-    .about li{color:#ddd; margin:6px 0}
-
-    /* GALLERY */
-    .gallery-grid{
-      display:grid; gap:16px;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    }
-    .ph-card{
-      position:relative; overflow:hidden; border-radius:14px; background:#0f0f14; border:1px solid rgba(255,255,255,.06)
-    }
-    .ph-card img{aspect-ratio: 4/5; object-fit:cover; transition: transform .35s ease, filter .35s ease}
-    .ph-card:hover img{transform: scale(1.05); filter: saturate(1.1)}
-    .ph-cap{
-      position:absolute; left:12px; bottom:12px; padding:6px 10px; border-radius:999px;
-      background:rgba(0,0,0,.5); backdrop-filter: blur(6px); border:1px solid rgba(255,255,255,.15);
-      font-size:12px; color:#eee
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #0d0d0d;
+      color: #fff;
+      line-height: 1.6;
     }
 
-    /* LIGHTBOX */
-    .lightbox{display:none; position:fixed; inset:0; z-index:1000; background:rgba(0,0,0,.92); place-items:center}
-    .lightbox.open{display:grid}
-    .lightbox img{max-width:92%; max-height:86vh; border-radius:12px; box-shadow: var(--shadow)}
-    .lb-close, .lb-prev, .lb-next{
-      position:absolute; top:50%; transform:translateY(-50%); padding:10px 12px;
-      background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18);
-      border-radius:12px; cursor:pointer; backdrop-filter: blur(4px)
+    header {
+      background: #1a1a1a;
+      padding: 20px;
+      text-align: center;
+      color: #ff3385;
     }
-    .lb-close{top:22px; right:22px; transform:none}
-    .lb-prev{left:22px}
-    .lb-next{right:22px}
-    .lb-close:hover, .lb-prev:hover, .lb-next:hover{background:rgba(255,255,255,.18)}
 
-    /* SERVICES */
-    .cards{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-    .card{
-      background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius);
-      padding:20px; box-shadow: var(--shadow)
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
     }
-    .card i{color:var(--gold); font-size:22px; margin-bottom:8px}
 
-    /* FOOTER */
-    footer{margin-top:70px; padding:28px 18px; background:#0b0f16; border-top:1px solid rgba(255,255,255,.06)}
-    .social{display:flex; gap:12px; justify-content:center}
-    .social a{width:38px;height:38px; display:grid; place-items:center; border-radius:10px; background:#121725; border:1px solid rgba(255,255,255,.08)}
-    .social a:hover{background:#1a2233}
-    
-    /* RESPONSIVE */
-    @media (max-width: 900px){ .about{grid-template-columns:1fr} .hero h1{font-size:42px} }
+    header p {
+      margin: 5px 0 0;
+      font-size: 1.2rem;
+      color: #ddd;
+    }
+
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      color: #ff3385;
+    }
+
+    /* Gallery Section */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background: #111; 
+      padding: 40px 20px;
+      margin-top: 40px;
+      border-radius: 12px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      color: #ff3385;
+    }
+
+    .contact-info p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .contact-info a {
+      color: #ff3385;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    .social-links {
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      margin: 0 10px;
+      font-weight: bold;
+      color: #fff;
+      background: #ff3385;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .social-links a:hover {
+      background: #d12c6d;
+    }
+
+    footer {
+      background: #0d1523;
+      padding: 20px;
+      margin-top: 30px;
+      text-align: center;
+      font-size: 14px;
+      color: #aaa;
+    }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="nav">
-    <div class="wrap">
-      <div class="brand"><span class="dot"></span> YO-YO STUDIO</div>
-      <a class="btn" href="#gallery">Explore Gallery</a>
-    </div>
-  </nav>
+  <header>
+    <h1>YO-YO STUDIO</h1>
+    <p>Capturing Moments, Creating Memories</p>
+  </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div>
-      <h1>Capturing Moments,<br/>Creating <span style="color:var(--gold)">Cinematic</span> Memories</h1>
-      <p>Traditional & Cinematic Editing with a premium studio touch. Book your shoot and feel the vibes.</p>
-      <div class="cta-row">
-        <a class="btn" href="#gallery"><i class="fa-solid fa-camera"></i>&nbsp; View Gallery</a>
-        <a class="btn ghost" href="#contact">Contact Us</a>
-      </div>
-      <div class="badge"><i class="fa-solid fa-star"></i> Trusted by happy clients</div>
-    </div>
+  <section>
+    <h2>About Us</h2>
+    <p>
+      At <b>YO-YO STUDIO</b>, we specialize in creating timeless memories through our professional editing styles.  
+      Whether you prefer <b>Traditional Editing</b> for a classic look or <b>Cinematic Editing</b> for a modern experience – we deliver perfection in every frame.
+    </p>
   </section>
 
-  <!-- ABOUT -->
-  <section class="section" id="about">
-    <h2 class="title">About Us</h2>
-    <p class="subtitle">We blend art and technology to craft frames that feel like cinema.</p>
-
-    <div class="about">
-      <div class="card">
-        <h3 style="margin:0 0 8px;font-weight:800">Why Yo Yo Studio?</h3>
-        <ul>
-          <li>Premium Cinematic & Traditional Editing</li>
-          <li>Color grading that pops, yet stays natural</li>
-          <li>Fast delivery & client-first approach</li>
-        </ul>
-      </div>
-      <div class="ph-card">
-        <!-- You can keep your watermarked image here too -->
-        <img src="images/yo_yo_studio_watermarked.jpg" alt="Yo Yo Studio — Cinematic Vibes">
-        <span class="ph-cap">Behind the scenes</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section class="section" id="gallery">
-    <h2 class="title">Our Gallery</h2>
-    <p class="subtitle">Tap any image to enlarge and swipe through.</p>
-
-    <div class="gallery-grid" id="grid">
-      <!-- Replace/add your images here -->
-      <div class="ph-card"><img src="images/yo_yo_studio_watermarked.jpg" alt="Cinematic Vibes"></div>
-      <div class="ph-card"><img src="images/g1.jpg" alt="Wedding Shoot"></div>
-      <div class="ph-card"><img src="images/g2.jpg" alt="Pre Wedding"></div>
-      <div class="ph-card"><img src="images/g3.jpg" alt="Portrait"></div>
-      <div class="ph-card"><img src="images/g4.jpg" alt="Event"></div>
-      <div class="ph-card"><img src="images/g5.jpg" alt="Outdoor"></div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="section" id="services">
-    <h2 class="title">Services</h2>
-    <p class="subtitle">Choose the vibe — we’ll craft the story.</p>
-
-    <div class="cards">
-      <div class="card"><i class="fa-solid fa-film"></i><h3>Cinematic Editing</h3><p>Rich color grading, dramatic tones, and a movie-like finish.</p></div>
-      <div class="card"><i class="fa-solid fa-heart"></i><h3>Wedding & Pre-wedding</h3><p>Emotional storytelling that stays timeless.</p></div>
-      <div class="card"><i class="fa-solid fa-image"></i><h3>Portrait Retouch</h3><p>Clean, natural, and premium retouching.</p></div>
-      <div class="card"><i class="fa-solid fa-bolt"></i><h3>Fast Delivery</h3><p>On-time delivery with consistent quality.</p></div>
+  <section>
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="yo_yo_studio_watermarked.jpg" alt="Sample Work 1">
+      <img src="yo_yo_studio_watermarked.jpg" alt="Sample Work 2">
+      <img src="yo_yo_studio_watermarked.jpg" alt="Sample Work 3">
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact" class="contact-section">
-  <h2>Contact Us</h2>
-  <p>Get in touch with <strong>Yo Yo Studio</strong> for bookings and inquiries.</p>
-  
-  <div class="contact-info">
-    <p><strong>📞 Phone:</strong> <a href="tel:+917250986286">+91 72509 86286</a></p>
-    <p><strong>📧 Email:</strong> <a href="mailto:yoyostudio63@gmail.com">yoyostudio63@gmail.com</a></p>
-    <p><strong>📸 Instagram:</strong> <a href="https://instagram.com/timelesstokens.io" target="_blank">@timelesstokens.io</a></p>
-  </div>
-  
-  <div class="social-links">
-    <a href="https://instagram.com/timelesstokens.io" target="_blank">📸 Instagram</a> | 
-    <a href="mailto:yoyostudio63@gmail.com">📧 Email</a> | 
-    <a href="tel:+917250986286">📞 Call Now</a>
-  </div>
-</section>
+    <h2>Contact Us</h2>
+    <p>Get in touch with <strong>Yo Yo Studio</strong> for bookings and inquiries.</p>
 
+    <div class="contact-info">
+      <p><strong>📞 Phone:</strong> <a href="tel:+917250986286">+91 72509 86286</a></p>
+      <p><strong>📧 Email:</strong> <a href="mailto:yoyostudio63@gmail.com">yoyostudio63@gmail.com</a></p>
+      <p><strong>📸 Instagram:</strong> <a href="https://instagram.com/timelesstokens.io" target="_blank">@timelesstokens.io</a></p>
+    </div>
 
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox">
-    <button class="lb-close" aria-label="Close" onclick="closeLb()"><i class="fa-solid fa-xmark"></i></button>
-    <button class="lb-prev" aria-label="Previous" onclick="navLb(-1)"><i class="fa-solid fa-chevron-left"></i></button>
-    <img id="lbImg" src="" alt="">
-    <button class="lb-next" aria-label="Next" onclick="navLb(1)"><i class="fa-solid fa-chevron-right"></i></button>
-  </div>
+    <div class="social-links">
+      <a href="https://instagram.com/timelesstokens.io" target="_blank">📸 Instagram</a>
+      <a href="mailto:yoyostudio63@gmail.com">📧 Email</a>
+      <a href="tel:+917250986286">📞 Call Now</a>
+    </div>
+  </section>
 
   <footer>
-    <div class="social">
-      <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-      <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-      <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-    </div>
-    <p style="color:var(--muted); margin-top:10px">&copy; <span id="yr"></span> YO-YO STUDIO. All rights reserved.</p>
+    &copy; 2025 YO-YO STUDIO | All Rights Reserved
   </footer>
 
-  <script>
-    // year
-    document.getElementById('yr').textContent = new Date().getFullYear();
-
-    // Lightbox logic
-    const grid = document.getElementById('grid');
-    const imgs = Array.from(grid.querySelectorAll('img'));
-    const lb = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lbImg');
-    let idx = 0;
-
-    imgs.forEach((img,i)=>{
-      img.addEventListener('click', ()=>{
-        idx = i; show(i);
-        lb.classList.add('open');
-      });
-    });
-
-    function show(i){
-      lbImg.src = imgs[i].src;
-      lbImg.alt = imgs[i].alt || "photo";
-    }
-    function closeLb(){ lb.classList.remove('open'); }
-    function navLb(step){
-      idx = (idx + step + imgs.length) % imgs.length;
-      show(idx);
-    }
-    window.addEventListener('keydown', (e)=>{
-      if(!lb.classList.contains('open')) return;
-      if(e.key==='Escape') closeLb();
-      if(e.key==='ArrowRight') navLb(1);
-      if(e.key==='ArrowLeft') navLb(-1);
-    });
-  </script>
 </body>
 </html>
