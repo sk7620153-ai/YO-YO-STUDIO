@@ -3,105 +3,126 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yo Yo Studio - Cinematic Photography</title>
+  <title>Yo Yo Studio</title>
   <style>
-    /* Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Poppins', sans-serif; background: #fff; color: #111; line-height: 1.6; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(145deg, #000000, #1a1a1a);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
 
-    /* Navigation */
-    header { position: fixed; top: 0; left: 0; width: 100%; background: rgba(255,255,255,0.9); padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); z-index: 1000; }
-    header h1 { font-size: 20px; letter-spacing: 2px; font-weight: 600; }
-    nav a { margin-left: 20px; text-decoration: none; color: #111; font-size: 14px; transition: 0.3s; }
-    nav a:hover { color: #555; }
+    /* Studio Title */
+    .hero h1 {
+      font-size: 42px;
+      letter-spacing: 3px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    .hero p {
+      font-size: 16px;
+      color: #aaa;
+    }
 
-    /* Sections */
-    section { padding: 100px 10%; min-height: 100vh; }
-    .hero { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-    .hero h2 { font-size: 48px; margin-bottom: 20px; font-weight: 700; }
-    .hero p { font-size: 18px; max-width: 600px; }
-
-    .about, .services, .gallery, .contact { text-align: center; }
-    .about h2, .services h2, .gallery h2, .contact h2 { font-size: 32px; margin-bottom: 20px; }
-    .about p { max-width: 700px; margin: 0 auto; font-size: 16px; color: #333; }
-
-    /* Services */
-    .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
-    .service { padding: 20px; border: 1px solid #ddd; border-radius: 10px; transition: 0.3s; }
-    .service:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
-
-    /* Gallery */
-    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 40px; }
-    .gallery-grid img { width: 100%; border-radius: 10px; transition: 0.3s; }
-    .gallery-grid img:hover { transform: scale(1.03); }
+    /* Grid Layout */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      width: 100%;
+      max-width: 1100px;
+      margin-top: 40px;
+    }
+    .card {
+      background: #111;
+      padding: 20px;
+      border-radius: 12px;
+      transition: 0.3s;
+      border: 1px solid #222;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 20px rgba(255,255,255,0.05);
+    }
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .card p {
+      font-size: 14px;
+      color: #bbb;
+    }
 
     /* Contact */
-    .contact p { margin: 10px 0; font-size: 16px; }
-    .contact a { color: #111; text-decoration: none; font-weight: 500; }
-    .contact a:hover { text-decoration: underline; }
+    .contact p {
+      margin: 6px 0;
+      font-size: 14px;
+    }
+    .contact a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .contact a:hover {
+      text-decoration: underline;
+    }
 
     /* Footer */
-    footer { background: #111; color: #fff; text-align: center; padding: 20px; font-size: 14px; }
+    footer {
+      font-size: 12px;
+      color: #777;
+      margin-top: 20px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 500px) {
+      .grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <header>
+  <!-- Studio Title -->
+  <div class="hero">
     <h1>YO YO STUDIO</h1>
-    <nav>
-      <a href="#hero">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+    <p>Cinematic Photography & Editing</p>
+  </div>
 
-  <!-- Hero -->
-  <section class="hero" id="hero">
-    <h2>Cinematic Photography & Editing</h2>
-    <p>Capturing timeless moments with a professional and minimal touch. Welcome to Yo Yo Studio.</p>
-  </section>
-
-  <!-- About -->
-  <section class="about" id="about">
-    <h2>About Us</h2>
-    <p>At Yo Yo Studio, we specialize in cinematic photography and professional editing. Our mission is to deliver stunning visuals that tell your story in the most elegant way possible.</p>
-  </section>
-
-  <!-- Services -->
-  <section class="services" id="services">
-    <h2>Our Services</h2>
-    <div class="service-grid">
-      <div class="service"><h3>Photography</h3><p>Professional photoshoots tailored to your needs.</p></div>
-      <div class="service"><h3>Cinematic Films</h3><p>Beautifully edited videos with a cinematic touch.</p></div>
-      <div class="service"><h3>Editing</h3><p>High-end retouching and post-production services.</p></div>
+  <!-- Grid Sections -->
+  <div class="grid">
+    <div class="card">
+      <h3>About Us</h3>
+      <p>We create timeless memories with cinematic photography & professional editing.</p>
     </div>
-  </section>
-
-  <!-- Gallery -->
-  <section class="gallery" id="gallery">
-    <h2>Our Work</h2>
-    <div class="gallery-grid">
-      <img src="https://source.unsplash.com/400x400/?camera" alt="Gallery">
-      <img src="https://source.unsplash.com/400x401/?studio" alt="Gallery">
-      <img src="https://source.unsplash.com/400x402/?photography" alt="Gallery">
-      <img src="https://source.unsplash.com/400x403/?cinematic" alt="Gallery">
+    <div class="card">
+      <h3>Services</h3>
+      <p>Photography, Cinematic Films, High-end Editing, Post Production.</p>
     </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="contact" id="contact">
-    <h2>Contact Us</h2>
-    <p>📞 Phone: <a href="tel:7250986286">+91 7250986286</a></p>
-    <p>📧 Email: <a href="mailto:yoyostudio63@gmail.com">yoyostudio63@gmail.com</a></p>
-    <p>📷 Instagram: <a href="https://instagram.com/timelesstokens.io" target="_blank">@timelesstokens.io</a></p>
-  </section>
+    <div class="card">
+      <h3>Gallery</h3>
+      <p>Explore our portfolio of cinematic shoots & creative projects.</p>
+    </div>
+    <div class="card contact">
+      <h3>Contact</h3>
+      <p>📞 <a href="tel:7250986286">+91 7250986286</a></p>
+      <p>📧 <a href="mailto:yoyostudio63@gmail.com">yoyostudio63@gmail.com</a></p>
+      <p>📷 <a href="https://instagram.com/timelesstokens.io" target="_blank">@timelesstokens.io</a></p>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Yo Yo Studio. All rights reserved.</p>
+    © 2025 Yo Yo Studio. All rights reserved.
   </footer>
 
 </body>
