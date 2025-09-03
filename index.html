@@ -4,10 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yo Yo Studio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       background: url('https://images.unsplash.com/photo-1519183071298-a2962be90b8e?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
       color: #fff;
       display: flex;
@@ -18,27 +22,35 @@
       text-align: center;
       padding: 20px;
       position: relative;
+      overflow: hidden;
     }
     body::before {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.7);
+      background: rgba(0,0,0,0.75);
       z-index: 0;
     }
 
     .hero, .grid, footer { position: relative; z-index: 1; }
 
-    /* Studio Title */
+    /* Logo + Title */
+    .hero img {
+      width: 70px;
+      margin-bottom: 10px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
     .hero h1 {
-      font-size: 48px;
+      font-size: 46px;
       letter-spacing: 3px;
       font-weight: 700;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
+      animation: slideDown 1.2s ease-in-out;
     }
     .hero p {
       font-size: 18px;
       color: #ddd;
+      animation: fadeIn 2s ease-in-out;
     }
     .hero .tagline {
       margin-top: 8px;
@@ -55,9 +67,10 @@
       width: 100%;
       max-width: 1200px;
       margin-top: 40px;
+      animation: fadeInUp 1.5s ease-in-out;
     }
     .card {
-      background: rgba(20,20,20,0.8);
+      background: rgba(20,20,20,0.85);
       padding: 25px;
       border-radius: 12px;
       transition: 0.4s;
@@ -78,9 +91,10 @@
     }
 
     /* Contact */
-    .contact p { margin: 8px 0; font-size: 14px; }
+    .contact p { margin: 10px 0; font-size: 15px; display: flex; justify-content: center; align-items: center; gap: 8px; }
     .contact a { color: #fff; text-decoration: none; font-weight: 500; }
     .contact a:hover { text-decoration: underline; }
+    .icon { font-size: 18px; }
 
     /* Footer */
     footer {
@@ -88,6 +102,11 @@
       color: #999;
       margin-top: 25px;
     }
+
+    /* Animations */
+    @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+    @keyframes slideDown { from {transform: translateY(-40px); opacity:0;} to {transform: translateY(0); opacity:1;} }
+    @keyframes fadeInUp { from {transform: translateY(40px); opacity:0;} to {transform: translateY(0); opacity:1;} }
 
     /* Responsive */
     @media (max-width: 900px) {
@@ -102,6 +121,8 @@
 
   <!-- Studio Title -->
   <div class="hero">
+    <!-- Replace this src with your own logo -->
+    <img src="https://cdn-icons-png.flaticon.com/512/685/685655.png" alt="Logo">
     <h1>YO YO STUDIO</h1>
     <p>Cinematic Photography & Professional Editing</p>
     <p class="tagline">“Turning Moments into Memories”</p>
@@ -111,7 +132,7 @@
   <div class="grid">
     <div class="card">
       <h3>📸 About Us</h3>
-      <p>We capture timeless stories with a perfect mix of art & technology. Elegant, cinematic, unforgettable.</p>
+      <p>We capture timeless stories with a perfect blend of art & technology. Elegant, cinematic, unforgettable.</p>
     </div>
     <div class="card">
       <h3>🎬 Services</h3>
@@ -123,9 +144,9 @@
     </div>
     <div class="card contact">
       <h3>📞 Contact</h3>
-      <p><a href="tel:7250986286">+91 7250986286</a></p>
-      <p><a href="mailto:yoyostudio63@gmail.com">yoyostudio63@gmail.com</a></p>
-      <p><a href="https://instagram.com/timelesstokens.io" target="_blank">@timelesstokens.io</a></p>
+      <p>📱 <a href="tel:7250986286">+91 7250986286</a></p>
+      <p>✉️ <a href="mailto:yoyostudio63@gmail.com">yoyostudio63@gmail.com</a></p>
+      <p>📷 <a href="https://instagram.com/timelesstokens.io" target="_blank">@timelesstokens.io</a></p>
     </div>
   </div>
 
