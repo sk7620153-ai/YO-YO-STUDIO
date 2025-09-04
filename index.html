@@ -1,207 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>YO YO STUDIO</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Montserrat', sans-serif;
-      color: #fff;
-      background: #000;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-    }
-
-    section {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    /* Hero Section */
-    #hero {
-      background: url('https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-      position: relative;
-    }
-    #hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.7);
-    }
-    #hero .content {
-      position: relative;
-      z-index: 1;
-    }
-    #hero h1 {
-      font-size: 60px;
-      font-weight: 700;
-      letter-spacing: 3px;
-    }
-    #hero p {
-      margin-top: 15px;
-      font-size: 20px;
-      color: #ddd;
-    }
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      background: rgba(0,0,0,0.7);
-      padding: 15px;
-      z-index: 1000;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-    nav a:hover { color: gold; }
-
-    /* Section Styles */
-    h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
-      color: gold;
-    }
-    p {
-      max-width: 800px;
-      margin: auto;
-      line-height: 1.6;
-      color: #ddd;
-    }
-
-    /* Services Grid */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-    .service-card {
-      background: rgba(255,255,255,0.05);
-      padding: 20px;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
-    .service-card:hover {
-      background: rgba(255,255,255,0.1);
-      transform: translateY(-5px);
-    }
-
-    /* Gallery */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      margin-top: 30px;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-
-    /* Contact */
-    .contact p { margin: 10px 0; }
-    .contact a { color: gold; text-decoration: none; font-weight: 600; }
-    .contact a:hover { text-decoration: underline; }
-
-    footer {
-      background: #111;
-      text-align: center;
-      padding: 15px;
-      font-size: 14px;
-      color: #aaa;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yo Yo Studio – Cinematic Wedding & Editing</title>
+  <meta name="description" content="Yo Yo Studio offers cinematic wedding films, reels, teaser edits and professional photo editing services.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="#hero">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <!-- Hero -->
-  <section id="hero">
-    <div class="content">
-      <h1>YO YO STUDIO</h1>
-      <p>Cinematic Photography & Professional Editing</p>
-    </div>
-  </section>
+  <!-- Header -->
+  <header>
+    <h1>Yo Yo Studio</h1>
+    <p>Cinematic | Wedding | Reels | Editing Services</p>
+  </header>
 
   <!-- About -->
-  <section id="about">
+  <section class="about">
     <h2>About Us</h2>
-    <p>At YO YO Studio, we specialize in capturing timeless memories through cinematic photography and professional editing. Every frame is crafted with passion, creativity, and precision to tell your story beautifully.</p>
-  </section>
-
-  <!-- Services -->
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="services">
-      <div class="service-card">
-        <h3>📸 Photography</h3>
-        <p>Professional shoots for weddings, events, and portraits.</p>
-      </div>
-      <div class="service-card">
-        <h3>🎬 Cinematic Films</h3>
-        <p>High-quality cinematic videos with storytelling approach.</p>
-      </div>
-      <div class="service-card">
-        <h3>✨ Editing & Retouching</h3>
-        <p>Expert editing to enhance and perfect every shot.</p>
-      </div>
-      <div class="service-card">
-        <h3>🏢 Studio Production</h3>
-        <p>Professional studio setup for all your creative needs.</p>
-      </div>
-    </div>
+    <p>At Yo Yo Studio, we create timeless memories through cinematic wedding films, traditional photography, teaser edits and Instagram reels. We bring life to your special moments with creativity and professionalism.</p>
   </section>
 
   <!-- Gallery -->
-  <section id="gallery">
+  <section class="gallery">
     <h2>Our Gallery</h2>
-    <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1516728778615-2d590ea1856f?auto=format&fit=crop&w=800&q=80" alt="Gallery1">
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Gallery2">
-      <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=800&q=80" alt="Gallery3">
-      <img src="https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?auto=format&fit=crop&w=800&q=80" alt="Gallery4">
+    <div class="gallery-container">
+      <img src="images/DSC_0791 (1).jpg" alt="Gallery Image 1">
+      <img src="images/DSC_0778.jpg" alt="Gallery Image 2">
+      <img src="images/IMG-20250324-WA0079.jpg" alt="Gallery Image 3">
+      <img src="images/DSC05736.JPG" alt="Gallery Image 4">
+      <img src="images/DSC05744.JPG" alt="Gallery Image 5">
+      <img src="images/483846327_17980233809814993_8222527869761608783_n..jpg" alt="Gallery Image 6">
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="contact">
+  <section class="contact">
     <h2>Contact Us</h2>
-    <p>📱 Phone: <a href="tel:7250986286">+91 7250986286</a></p>
-    <p>✉️ Email: <a href="mailto:yoyostudio63@gmail.com">yoyostudio63@gmail.com</a></p>
-    <p>📷 Instagram: <a href="https://instagram.com/timelesstokens.io" target="_blank">@timelesstokens.io</a></p>
+    <p>📞 7250986286</p>
+    <p>📧 yoyostudio63@gmail.com</p>
+    <p>📸 Instagram: <a href="https://instagram.com/timelesstokens.io" target="_blank">@timelesstokens.io</a></p>
   </section>
 
   <!-- Footer -->
   <footer>
-    © 2025 YO YO Studio | All Rights Reserved
+    <p>© 2025 Yo Yo Studio | All Rights Reserved</p>
   </footer>
 
 </body>
