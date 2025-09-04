@@ -3,130 +3,178 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yo-Yo Studio | Cinematic Memories</title>
+  <title>Yo Yo Studio</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
     body {
-      color: #fff;
-      text-align: center;
-      background: url('background.jpg') no-repeat center center/cover;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      backdrop-filter: brightness(0.8);
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #111;
+      color: #eee;
+      scroll-behavior: smooth;
     }
-
     header {
-      padding: 40px 20px;
+      height: 100vh;
+      background: url("yo_yo_studio_watermarked.jpg") no-repeat center/cover;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
     }
-
-    header h1 {
-      font-size: 3rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #ffcc00;
-      text-shadow: 2px 2px 10px #000;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #ddd;
-    }
-
-    .about, .gallery, .contact {
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(0,0,0,0.6);
-      margin: 30px auto;
-      padding: 30px;
-      border-radius: 15px;
-      width: 80%;
-      box-shadow: 0px 0px 20px rgba(0,0,0,0.7);
     }
-
+    header .content {
+      position: relative;
+      z-index: 2;
+    }
+    header h1 {
+      font-size: 3.5rem;
+      margin: 0;
+      color: gold;
+    }
+    header p {
+      font-size: 1.3rem;
+      margin-top: 10px;
+    }
+    section {
+      padding: 60px 10%;
+    }
     h2 {
-      margin-bottom: 15px;
-      font-size: 2rem;
-      color: #ffcc00;
+      text-align: center;
+      color: gold;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
     }
-
-    p {
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    .gallery-grid {
+    .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
-
-    .gallery-grid img {
+    .card {
+      background: #1c1c1c;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px rgba(255,215,0,0.5);
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+    .gallery img {
       width: 100%;
       border-radius: 10px;
-      transition: transform 0.3s;
+      transition: transform 0.3s ease;
     }
-
-    .gallery-grid img:hover {
+    .gallery img:hover {
       transform: scale(1.05);
     }
-
-    .contact p {
-      margin: 10px 0;
-      font-size: 1.1rem;
+    .testimonials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
     }
-
-    .contact a {
-      color: #ffcc00;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    footer {
+    .testimonial {
+      background: #1c1c1c;
       padding: 20px;
-      font-size: 0.9rem;
-      background: rgba(0,0,0,0.7);
+      border-radius: 10px;
+      width: 300px;
+    }
+    .contact {
+      text-align: center;
+      font-size: 1.2rem;
+    }
+    .contact a {
+      color: gold;
+      text-decoration: none;
+    }
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
 
+  <!-- Hero -->
   <header>
-    <h1>Yo-Yo Studio</h1>
-    <p>Capturing Moments, Creating Cinematic Memories</p>
+    <div class="content">
+      <h1>Yo Yo Studio</h1>
+      <p>Cinematic Wedding · Album Design · Editing Services</p>
+    </div>
   </header>
 
-  <section class="about">
+  <!-- About -->
+  <section id="about">
     <h2>About Us</h2>
-    <p>At <b>Yo-Yo Studio</b>, we specialize in creating timeless memories with professional editing styles. 
-    Whether you prefer <b>Traditional Editing</b> or <b>Cinematic Editing</b>, we deliver perfection in every frame.</p>
+    <p style="text-align:center; max-width:800px; margin:auto;">
+      Welcome to <b>Yo Yo Studio</b> – where memories turn into timeless treasures. 
+      We specialize in cinematic wedding edits, album design, Instagram reels, 
+      and all kinds of video editing services to make your moments unforgettable.
+    </p>
   </section>
 
-  <section class="gallery">
-    <h2>Our Work</h2>
-    <div class="gallery-grid">
-      <img src="gallery1.jpg" alt="Gallery Image 1">
-      <img src="gallery2.jpg" alt="Gallery Image 2">
-      <img src="gallery3.jpg" alt="Gallery Image 3">
-      <img src="gallery4.jpg" alt="Gallery Image 4">
+  <!-- Services -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="card"><h3>Album Design</h3><p>Beautifully crafted wedding albums that last forever.</p></div>
+      <div class="card"><h3>Instagram Reels</h3><p>Trendy and creative reels for social media impact.</p></div>
+      <div class="card"><h3>Short Videos</h3><p>Quick cinematic edits for your special moments.</p></div>
+      <div class="card"><h3>Traditional Wedding Editing</h3><p>Preserving every ritual with elegance and clarity.</p></div>
+      <div class="card"><h3>Cinematic Wedding Editing</h3><p>Movie-like edits that tell your love story.</p></div>
+      <div class="card"><h3>Wedding Teasers</h3><p>Short and stunning previews of your big day.</p></div>
+      <div class="card"><h3>All Editing Services</h3><p>From reels to films – we edit it all.</p></div>
     </div>
   </section>
 
-  <section class="contact">
-    <h2>Contact Us</h2>
-    <p>📞 Phone: <a href="tel:+917250986286">+91 72509 86286</a></p>
-    <p>📧 Email: <a href="mailto:yoyostudio63@gmail.com">yoyostudio63@gmail.com</a></p>
-    <p>📷 Instagram: <a href="https://instagram.com/timelesstokens.io" target="_blank">@timelesstokens.io</a></p>
+  <!-- Gallery -->
+  <section id="gallery">
+    <h2>Our Work</h2>
+    <div class="gallery">
+      <img src="yo_yo_studio_watermarked.jpg" alt="Gallery Image">
+      <img src="ChatGPT Image Sep 4, 2025, 12_01_21 AM.png" alt="Gallery Image">
+      <img src="yo_yo_studio_watermarked.jpg" alt="Gallery Image">
+    </div>
   </section>
 
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonials">
+      <div class="testimonial">“Yo Yo Studio made our wedding look like a movie. Simply amazing!”</div>
+      <div class="testimonial">“Best editing service, reels went viral on Instagram. Highly recommended.”</div>
+      <div class="testimonial">“Album design is perfect – memories captured beautifully.”</div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact">
+      <p>📞 Phone: <a href="tel:7250986286">7250986286</a></p>
+      <p>📧 Email: <a href="mailto:yoyostudio63@gmail.com">yoyostudio63@gmail.com</a></p>
+      <p>📸 Instagram: <a href="https://instagram.com/timelesstokens.io" target="_blank">@timelesstokens.io</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>© 2025 Yo-Yo Studio | All Rights Reserved</p>
+    © 2025 Yo Yo Studio | All Rights Reserved
   </footer>
 
 </body>
