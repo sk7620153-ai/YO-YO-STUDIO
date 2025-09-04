@@ -3,49 +3,145 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yo Yo Studio – Cinematic Wedding & Editing</title>
-  <meta name="description" content="Yo Yo Studio offers cinematic wedding films, reels, teaser edits and professional photo editing services.">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="favicon.png">
+  <title>Yo-Yo Studio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Body Background */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+    }
+
+    header {
+      text-align: center;
+      padding: 50px 20px;
+      background: rgba(0,0,0,0.6);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      margin: 0;
+      color: #ff416c;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #ddd;
+    }
+
+    /* Button Style */
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      background: linear-gradient(45deg, #ff416c, #ff4b2b);
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .btn:hover {
+      background: linear-gradient(45deg, #ff4b2b, #ff416c);
+      transform: scale(1.05);
+    }
+
+    /* Gallery Section */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      border-radius: 15px;
+      padding: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      transition: 0.3s;
+      text-align: center;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .card h3 {
+      margin: 15px 0 10px;
+    }
+    .card p {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.7);
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: #bbb;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Header Section -->
   <header>
-    <h1>Yo Yo Studio</h1>
-    <p>Cinematic | Wedding | Reels | Editing Services</p>
+    <h1>Yo-Yo Studio</h1>
+    <p>Cinematic Wedding | Traditional Shoots | Creative Reels</p>
+    <a href="#gallery" class="btn">Explore Our Work</a>
   </header>
 
-  <!-- About -->
-  <section class="about">
-    <h2>About Us</h2>
-    <p>At Yo Yo Studio, we create timeless memories through cinematic wedding films, traditional photography, teaser edits and Instagram reels. We bring life to your special moments with creativity and professionalism.</p>
-  </section>
-
-  <!-- Gallery -->
-  <section class="gallery">
-    <h2>Our Gallery</h2>
-    <div class="gallery-container">
-      <img src="images/DSC_0791 (1).jpg" alt="Gallery Image 1">
-      <img src="images/DSC_0778.jpg" alt="Gallery Image 2">
-      <img src="images/IMG-20250324-WA0079.jpg" alt="Gallery Image 3">
-      <img src="images/DSC05736.JPG" alt="Gallery Image 4">
-      <img src="images/DSC05744.JPG" alt="Gallery Image 5">
-      <img src="images/483846327_17980233809814993_8222527869761608783_n..jpg" alt="Gallery Image 6">
+  <!-- Gallery Section -->
+  <section id="gallery" class="gallery">
+    <div class="card">
+      <img src="DSC_0791 (1).jpg" alt="Wedding Shoot">
+      <h3>Wedding Shoot</h3>
+      <p>Capturing your most special day with cinematic storytelling.</p>
     </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="contact">
-    <h2>Contact Us</h2>
-    <p>📞 7250986286</p>
-    <p>📧 yoyostudio63@gmail.com</p>
-    <p>📸 Instagram: <a href="https://instagram.com/timelesstokens.io" target="_blank">@timelesstokens.io</a></p>
+    <div class="card">
+      <img src="DSC_0778.jpg" alt="Traditional Photography">
+      <h3>Traditional Photography</h3>
+      <p>Preserving culture and heritage through timeless photos.</p>
+    </div>
+    <div class="card">
+      <img src="IMG-20250324-WA0079.jpg" alt="Cinematic Reels">
+      <h3>Cinematic Reels</h3>
+      <p>Short films and reels that bring your story to life.</p>
+    </div>
+    <div class="card">
+      <img src="DSC05736.JPG" alt="Album Design">
+      <h3>Album Design</h3>
+      <p>Beautifully crafted albums for lasting memories.</p>
+    </div>
+    <div class="card">
+      <img src="DSC05744.JPG" alt="Editing Services">
+      <h3>Editing Services</h3>
+      <p>Professional editing to make your videos shine.</p>
+    </div>
+    <div class="card">
+      <img src="483846327_17980233809814993_8222527869761608783_n..jpg" alt="Teaser Videos">
+      <h3>Teaser Videos</h3>
+      <p>Creative teaser videos to excite and engage.</p>
+    </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Yo Yo Studio | All Rights Reserved</p>
+    © 2025 Yo-Yo Studio | Crafted with ❤️ for cinematic memories
   </footer>
 
 </body>
