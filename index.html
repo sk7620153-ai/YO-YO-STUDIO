@@ -3,179 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yo Yo Studio</title>
+  <title>Yo Yo Studio - Gallery</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: Arial, sans-serif;
       background: #111;
-      color: #eee;
-      scroll-behavior: smooth;
-    }
-    header {
-      height: 100vh;
-      background: url("yo_yo_studio_watermarked.jpg") no-repeat center/cover;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
       color: #fff;
     }
-    header::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.6);
-    }
-    header .content {
-      position: relative;
-      z-index: 2;
+    header {
+      text-align: center;
+      padding: 30px 20px;
+      background: #000;
     }
     header h1 {
-      font-size: 3.5rem;
       margin: 0;
-      color: gold;
-    }
-    header p {
-      font-size: 1.3rem;
-      margin-top: 10px;
-    }
-    section {
-      padding: 60px 10%;
-    }
-    h2 {
-      text-align: center;
-      color: gold;
-      margin-bottom: 40px;
       font-size: 2.5rem;
-    }
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: #1c1c1c;
-      padding: 20px;
-      border-radius: 12px;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 0 20px rgba(255,215,0,0.5);
+      color: #ffcc00;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
+      gap: 10px;
+      padding: 20px;
     }
     .gallery img {
       width: 100%;
-      border-radius: 10px;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
       transition: transform 0.3s ease;
     }
     .gallery img:hover {
       transform: scale(1.05);
     }
-    .testimonials {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
       justify-content: center;
+      align-items: center;
     }
-    .testimonial {
-      background: #1c1c1c;
-      padding: 20px;
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
       border-radius: 10px;
-      width: 300px;
     }
-    .contact {
-      text-align: center;
-      font-size: 1.2rem;
+    .lightbox:target {
+      display: flex;
     }
-    .contact a {
-      color: gold;
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: #fff;
+      font-size: 40px;
       text-decoration: none;
-    }
-    footer {
-      background: #000;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      color: #aaa;
     }
   </style>
 </head>
 <body>
-
-  <!-- Hero -->
   <header>
-    <div class="content">
-      <h1>Yo Yo Studio</h1>
-      <p>Cinematic Wedding · Album Design · Editing Services</p>
-    </div>
+    <h1>Yo Yo Studio Gallery</h1>
+    <p>Cinematic Vibes • Weddings • Portraits • Traditional</p>
   </header>
 
-  <!-- About -->
-  <section id="about">
-    <h2>About Us</h2>
-    <p style="text-align:center; max-width:800px; margin:auto;">
-      Welcome to <b>Yo Yo Studio</b> – where memories turn into timeless treasures. 
-      We specialize in cinematic wedding edits, album design, Instagram reels, 
-      and all kinds of video editing services to make your moments unforgettable.
-    </p>
-  </section>
+  <div class="gallery">
+    <a href="#img1"><img src="DSC_0791 (1).jpg" alt="Wedding Photo"></a>
+    <a href="#img2"><img src="DSC_0778.jpg" alt="Wedding Photo"></a>
+    <a href="#img3"><img src="IMG-20250324-WA0079.jpg" alt="Traditional"></a>
+    <a href="#img4"><img src="DSC05736.JPG" alt="Portrait"></a>
+    <a href="#img5"><img src="DSC05744.JPG" alt="Portrait"></a>
+    <a href="#img6"><img src="483846327_17980233809814993_8222527869761608783_n..jpg" alt="Couple"></a>
+  </div>
 
-  <!-- Services -->
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="services">
-      <div class="card"><h3>Album Design</h3><p>Beautifully crafted wedding albums that last forever.</p></div>
-      <div class="card"><h3>Instagram Reels</h3><p>Trendy and creative reels for social media impact.</p></div>
-      <div class="card"><h3>Short Videos</h3><p>Quick cinematic edits for your special moments.</p></div>
-      <div class="card"><h3>Traditional Wedding Editing</h3><p>Preserving every ritual with elegance and clarity.</p></div>
-      <div class="card"><h3>Cinematic Wedding Editing</h3><p>Movie-like edits that tell your love story.</p></div>
-      <div class="card"><h3>Wedding Teasers</h3><p>Short and stunning previews of your big day.</p></div>
-      <div class="card"><h3>All Editing Services</h3><p>From reels to films – we edit it all.</p></div>
-    </div>
-  </section>
-
-  <!-- Gallery -->
-  <section id="gallery">
-    <h2>Our Work</h2>
-    <div class="gallery">
-      <img src="yo_yo_studio_watermarked.jpg" alt="Gallery Image">
-      <img src="ChatGPT Image Sep 4, 2025, 12_01_21 AM.png" alt="Gallery Image">
-      <img src="yo_yo_studio_watermarked.jpg" alt="Gallery Image">
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section id="testimonials">
-    <h2>What Our Clients Say</h2>
-    <div class="testimonials">
-      <div class="testimonial">“Yo Yo Studio made our wedding look like a movie. Simply amazing!”</div>
-      <div class="testimonial">“Best editing service, reels went viral on Instagram. Highly recommended.”</div>
-      <div class="testimonial">“Album design is perfect – memories captured beautifully.”</div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <div class="contact">
-      <p>📞 Phone: <a href="tel:7250986286">7250986286</a></p>
-      <p>📧 Email: <a href="mailto:yoyostudio63@gmail.com">yoyostudio63@gmail.com</a></p>
-      <p>📸 Instagram: <a href="https://instagram.com/timelesstokens.io" target="_blank">@timelesstokens.io</a></p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    © 2025 Yo Yo Studio | All Rights Reserved
-  </footer>
+  <!-- Lightbox images -->
+  <div class="lightbox" id="img1">
+    <a href="#" class="close">&times;</a>
+    <img src="DSC_0791 (1).jpg" alt="">
+  </div>
+  <div class="lightbox" id="img2">
+    <a href="#" class="close">&times;</a>
+    <img src="DSC_0778.jpg" alt="">
+  </div>
+  <div class="lightbox" id="img3">
+    <a href="#" class="close">&times;</a>
+    <img src="IMG-20250324-WA0079.jpg" alt="">
+  </div>
+  <div class="lightbox" id="img4">
+    <a href="#" class="close">&times;</a>
+    <img src="DSC05736.JPG" alt="">
+  </div>
+  <div class="lightbox" id="img5">
+    <a href="#" class="close">&times;</a>
+    <img src="DSC05744.JPG" alt="">
+  </div>
+  <div class="lightbox" id="img6">
+    <a href="#" class="close">&times;</a>
+    <img src="483846327_17980233809814993_8222527869761608783_n..jpg" alt="">
+  </div>
 
 </body>
 </html>
